@@ -5,6 +5,7 @@ import br.edu.ifpb.utils.ValideInput;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
@@ -14,8 +15,9 @@ public class Doador {
     private Double peso;
     private LocalDate dataNascimento;
     private GeneroEnum genero;
-    private boolean estaDoente;
-    private boolean novoDoador;
+    private Boolean estaDoente;
+    private Boolean novoDoador;
+    private int idade = 0;
 
     public Doador() {
     }
@@ -28,11 +30,6 @@ public class Doador {
         this.setNovoDoador(novoDoador);
         this.setEstaDoente(estaDoente);
     }
-
-    private LocalDate setDate (String date){
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    }
-
 
 
     public String getName() {
@@ -50,7 +47,9 @@ public class Doador {
     }
 
     public void setPeso(Double peso) {
-        this.peso = peso;
+        if (peso > 0){
+            this.peso = peso;
+        }
     }
 
     public GeneroEnum getGenero() {
@@ -81,8 +80,24 @@ public class Doador {
         return dataNascimento;
     }
 
+    public int getIdade() {
+        return idade;
+    }
+
     public void setDataNascimento(String dataNascimento) {
+        LocalDate dataDeNascimento = setDate(dataNascimento);
+        if (setIdade(dataDeNascimento)<124 && setIdade(dataDeNascimento)>= 0){
         this.dataNascimento = setDate(dataNascimento);
+        this.idade = setIdade(dataDeNascimento);
+        }
+    }
+
+    private Integer setIdade(LocalDate dataNascimento){
+        return Period.between(dataNascimento, LocalDate.now()).getYears();
+    }
+
+    private LocalDate setDate (String date){
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     @Override

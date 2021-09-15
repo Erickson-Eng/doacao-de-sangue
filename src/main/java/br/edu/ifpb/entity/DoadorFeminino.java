@@ -10,6 +10,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DoadorFeminino extends Doador{
-    private boolean periodoDeAmamentacao;
+    private Boolean estaGravida;
+    private Boolean periodoDeAmamentacao;
     private LocalDate diaParto;
+    private Integer periodoParto;
 }

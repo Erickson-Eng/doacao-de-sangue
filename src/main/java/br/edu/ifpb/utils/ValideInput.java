@@ -6,4 +6,7 @@ public class ValideInput {
     public static boolean validateName(String name){
         return name.matches("[A-Z][a-zA-Z]+|[a-zA-Z]+(\\s[a-zA-Z]+){0,5}");
     }
+    public static boolean validateTrueOrFalse(String obj){
+        return obj.matches("[VF]");
+    }
 }

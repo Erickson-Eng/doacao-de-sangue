@@ -15,14 +15,14 @@ public class Doador {
     private Double peso;
     private LocalDate dataNascimento;
     private GeneroEnum genero;
-    private Boolean estaDoente;
-    private Boolean novoDoador;
+    private String estaDoente;
+    private String novoDoador;
     private int idade = 0;
 
     public Doador() {
     }
 
-    public Doador(String name, Double peso, String dataNascimento, GeneroEnum genero, boolean novoDoador, boolean estaDoente) {
+    public Doador(String name, Double peso, String dataNascimento, GeneroEnum genero, String novoDoador, String estaDoente) {
         this.setName(name);
         this.setPeso(peso);
         this.setDataNascimento(dataNascimento);
@@ -60,20 +60,24 @@ public class Doador {
         this.genero = genero;
     }
 
-    public boolean isNovoDoador() {
-        return novoDoador;
-    }
-
-    public void setNovoDoador(boolean novoDoador) {
-        this.novoDoador = novoDoador;
-    }
-
-    public boolean isEstaDoente() {
+    public String getEstaDoente() {
         return estaDoente;
     }
 
-    public void setEstaDoente(boolean estaDoente) {
-        this.estaDoente = estaDoente;
+    public void setEstaDoente(String estaDoente) {
+        if (ValideInput.validateTrueOrFalse(estaDoente)){
+            this.estaDoente = estaDoente;
+        }
+    }
+
+    public String getNovoDoador() {
+        return novoDoador;
+    }
+
+    public void setNovoDoador(String novoDoador) {
+        if (ValideInput.validateTrueOrFalse(novoDoador)){
+            this.novoDoador = novoDoador;
+        }
     }
 
     public LocalDate getDataNascimento() {

@@ -49,14 +49,15 @@ public class TestDoador {
         falsoDoador.setName("ABC123");
         falsoDoador.setPeso(-25.1);
         falsoDoador.setDataDeNascimento("19/01/1800");
-        falsoDoador.setGenero(1);
         falsoDoador.setNovoDoador("Verdadeiro");
 
 
         Assert.assertNull(falsoDoador.getName());
         Assert.assertNull(falsoDoador.getDataNascimento());
         Assert.assertNull(falsoDoador.getPeso());
-        Assert.assertNotEquals(GeneroEnum.MASCULINO,falsoDoador.getGenero());
+        Assert.assertThrows(IllegalArgumentException.class, () ->{
+            falsoDoador.setGenero(4);
+        });
         Assert.assertNull(falsoDoador.getNovoDoador());
 
         falsoDoador.setNovoDoador("F");

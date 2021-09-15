@@ -22,7 +22,7 @@ public class Doador {
     public Doador() {
     }
 
-    public Doador(String name, GeneroEnum genero, Double peso, String dataNascimento, String novoDoador, SituacaoMedica situacaoMedica) {
+    public Doador(String name, Integer genero, Double peso, String dataNascimento, String novoDoador, SituacaoMedica situacaoMedica) {
         this.setName(name);
         this.setGenero(genero);
         this.setPeso(peso);
@@ -55,8 +55,10 @@ public class Doador {
         return genero;
     }
 
-    public void setGenero(GeneroEnum genero) {
-        this.genero = genero;
+    public void setGenero(Integer codigo) {
+        if (codigo != null){
+            this.genero = GeneroEnum.valueOf(codigo);
+        }
     }
 
 

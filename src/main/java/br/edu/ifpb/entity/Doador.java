@@ -26,7 +26,7 @@ public class Doador {
         this.setName(name);
         this.setGenero(genero);
         this.setPeso(peso);
-        this.setDataNascimento(dataNascimento);
+        this.setDataDeNascimento(dataNascimento);
         this.setNovoDoador(novoDoador);
         this.setSituacaoMedica(situacaoMedica);
     }
@@ -78,12 +78,16 @@ public class Doador {
         return idade;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        LocalDate dataDeNascimento = TrataDatas.stringToLocalDate(dataNascimento);
+    public void setDataDeNascimento(String obj) {
+        LocalDate dataDeNascimento = TrataDatas.stringToLocalDate(obj);
         if (TrataDatas.localDateToIntegerIdade(dataDeNascimento)<124 && TrataDatas.localDateToIntegerIdade(dataDeNascimento)>= 0){
-            this.setDataNascimento(dataNascimento);
+            this.setDataNascimento(dataDeNascimento);
             this.setIdade(TrataDatas.localDateToIntegerIdade(dataDeNascimento));
         }
+    }
+
+    private void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     private void setIdade(int idade) {

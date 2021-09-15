@@ -9,15 +9,30 @@ public class TestDoador {
     @Test
     public void testDoador(){
         Doador doador = new Doador();
+        SituacaoMedica situacaoMedicaDoador = new SituacaoMedica();
         Doador falsoDoador = new Doador();
+        SituacaoMedica situacaoMedicaFalsoDoador = new SituacaoMedica();
         Doador falsoDoador2 = new Doador();
 
         //testes positivos
         doador.setName("Erickson");
         doador.setPeso(85.4);
-        doador.setDataNascimento("19/01/1996");
+        doador.setDataDeNascimento("19/01/1996");
         doador.setGenero(GeneroEnum.MASCULINO);
         doador.setNovoDoador("V");
+
+        // dados médicos
+        situacaoMedicaDoador.setAmamentando("F");
+        situacaoMedicaDoador.setGravida("F");
+        situacaoMedicaDoador.setFebre("F");
+        doador.setSituacaoMedica(situacaoMedicaDoador);
+        if (doador.getGenero().equals(GeneroEnum.MASCULINO)){
+            Assert.assertEquals("F", doador.getSituacaoMedica().getAmamentando());
+            Assert.assertEquals("F", doador.getSituacaoMedica().getGravida());
+            Assert.assertNotNull(doador.getSituacaoMedica().getFebre());
+            Assert.assertNull(doador.getSituacaoMedica().getPeriodoPosParto());
+            Assert.assertNull(doador.getSituacaoMedica().getDiaDoParto());
+        }
 
         Assert.assertEquals("Erickson",doador.getName());
         Assert.assertNotNull(doador.getDataNascimento());
@@ -30,21 +45,24 @@ public class TestDoador {
         //testes negativos
         falsoDoador.setName("ABC123");
         falsoDoador.setPeso(-25.1);
-        falsoDoador.setDataNascimento("19/01/1800");
+        falsoDoador.setDataDeNascimento("19/01/1800");
         falsoDoador.setGenero(GeneroEnum.FEMININO);
         falsoDoador.setNovoDoador("Verdadeiro");
-        falsoDoador.setNovoDoador("F");
+
 
         Assert.assertNull(falsoDoador.getName());
         Assert.assertNull(falsoDoador.getDataNascimento());
         Assert.assertNull(falsoDoador.getPeso());
         Assert.assertNotEquals(GeneroEnum.MASCULINO,falsoDoador.getGenero());
         Assert.assertNull(falsoDoador.getNovoDoador());
+
+        falsoDoador.setNovoDoador("F");
         Assert.assertEquals("F",falsoDoador.getNovoDoador());
+
         //testes negativos
         falsoDoador2.setName("123 AbC");
         falsoDoador2.setPeso(0.0);
-        falsoDoador2.setDataNascimento("19/01/2050");
+        falsoDoador2.setDataDeNascimento("19/01/2050");
 
         Assert.assertNull(falsoDoador2.getName());
         Assert.assertNull(falsoDoador2.getPeso());

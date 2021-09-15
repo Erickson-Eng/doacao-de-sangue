@@ -1,6 +1,7 @@
 package br.edu.ifpb.entity;
 
 import br.edu.ifpb.entity.enums.GeneroEnum;
+import br.edu.ifpb.utils.ValideInput;
 import lombok.ToString;
 
 import java.time.LocalDate;
@@ -39,7 +40,9 @@ public class Doador {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (ValideInput.validateName(name)){
+            this.name = name;
+        }
     }
 
     public Double getPeso() {

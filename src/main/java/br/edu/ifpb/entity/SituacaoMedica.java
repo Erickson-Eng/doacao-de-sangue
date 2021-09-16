@@ -1,5 +1,6 @@
 package br.edu.ifpb.entity;
 
+import br.edu.ifpb.utils.ValideInput;
 import lombok.ToString;
 
 import java.time.LocalDate;
@@ -61,8 +62,8 @@ public class SituacaoMedica {
     }
 
     public void setFebre(String febre) {
-        this.febre = febre;
+        if (ValideInput.validateTrueOrFalse(febre)){
+            this.febre = febre;
+        }
     }
-
-
 }

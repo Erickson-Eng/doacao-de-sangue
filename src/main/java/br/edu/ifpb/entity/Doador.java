@@ -29,6 +29,11 @@ public class Doador {
         this.setDataDeNascimento(dataNascimento);
         this.setNovoDoador(novoDoador);
         this.setSituacaoMedica(situacaoMedica);
+        if (getGenero().equals(GeneroEnum.MASCULINO)){
+            situacaoMedica.setGravida("F");
+            situacaoMedica.setAmamentando("F");
+            situacaoMedica.setPeriodoPosParto(null);
+        }
     }
 
     public String getName() {

@@ -41,7 +41,7 @@ public class TestDoador {
             Assert.assertEquals("F", doador.getSituacaoMedica().getAmamentando());
             Assert.assertEquals("F", doador.getSituacaoMedica().getGravida());
             Assert.assertNotNull(doador.getSituacaoMedica().getFebre());
-            Assert.assertNull(doador.getSituacaoMedica().getPeriodoPosParto());
+            Assert.assertNull(doador.getSituacaoMedica().getMesesPosParto());
             Assert.assertNull(doador.getSituacaoMedica().getDiaDoParto());
         }
 

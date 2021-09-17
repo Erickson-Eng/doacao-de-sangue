@@ -1,9 +1,5 @@
 package br.edu.ifpb.entity;
 
-import br.edu.ifpb.entity.Doador;
-import br.edu.ifpb.entity.enums.GeneroEnum;
-
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class TriagemMedica {
@@ -29,6 +25,7 @@ public class TriagemMedica {
     }
 
     public boolean verificarAmamentacao (Doador d){
-        return Objects.equals(d.getSituacaoMedica().getAmamentando(), "V") && d.getSituacaoMedica().getPeriodoPosParto() <= 12;
+
+        return Objects.equals(d.getSituacaoMedica().getAmamentando(), "V") && (d.getSituacaoMedica().getMesesPosParto() <= 12 && d.getSituacaoMedica().getAnosPosparto() < 1);
     }
 }

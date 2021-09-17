@@ -6,8 +6,12 @@ import java.time.format.DateTimeFormatter;
 
 public class TrataDatas {
 
-    public static Integer localDateToIntegerIdade(LocalDate dataNascimento){
+    public static Integer localDateToIntegerAnos(LocalDate dataNascimento){
         return Period.between(dataNascimento, LocalDate.now()).getYears();
+    }
+
+    public static Integer localDateToIntegerMeses(LocalDate date){
+        return Period.between(date, LocalDate.now()).getMonths();
     }
 
     public static LocalDate stringToLocalDate(String date){

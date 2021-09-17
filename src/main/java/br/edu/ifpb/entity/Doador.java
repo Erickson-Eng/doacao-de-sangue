@@ -29,6 +29,11 @@ public class Doador {
         this.setDataDeNascimento(dataNascimento);
         this.setNovoDoador(novoDoador);
         this.setSituacaoMedica(situacaoMedica);
+        if (getGenero().equals(GeneroEnum.MASCULINO)){
+            situacaoMedica.setGravida("F");
+            situacaoMedica.setAmamentando("F");
+            situacaoMedica.setMesesPosParto(null);
+        }
     }
 
     public String getName() {
@@ -82,9 +87,9 @@ public class Doador {
 
     public void setDataDeNascimento(String obj) {
         LocalDate dataDeNascimento = TrataDatas.stringToLocalDate(obj);
-        if (TrataDatas.localDateToIntegerIdade(dataDeNascimento)<124 && TrataDatas.localDateToIntegerIdade(dataDeNascimento)>= 0){
+        if (TrataDatas.localDateToIntegerAnos(dataDeNascimento)<124 && TrataDatas.localDateToIntegerAnos(dataDeNascimento)>= 0){
             this.setDataNascimento(dataDeNascimento);
-            this.setIdade(TrataDatas.localDateToIntegerIdade(dataDeNascimento));
+            this.setIdade(TrataDatas.localDateToIntegerAnos(dataDeNascimento));
         }
     }
 

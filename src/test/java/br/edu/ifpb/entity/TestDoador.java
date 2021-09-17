@@ -35,7 +35,9 @@ public class TestDoador {
         situacaoMedicaDoador.setGravida("F");
         situacaoMedicaDoador.setFebre("F");
         doador.setSituacaoMedica(situacaoMedicaDoador);
-        if (doador.getGenero().equals(GeneroEnum.MASCULINO)){
+
+
+        if (doador.getGenero().equals(2)){
             Assert.assertEquals("F", doador.getSituacaoMedica().getAmamentando());
             Assert.assertEquals("F", doador.getSituacaoMedica().getGravida());
             Assert.assertNotNull(doador.getSituacaoMedica().getFebre());
@@ -49,6 +51,7 @@ public class TestDoador {
         falsoDoador.setName("ABC123");
         falsoDoador.setPeso(-25.1);
         falsoDoador.setDataDeNascimento("19/01/1800");
+        falsoDoador.setGenero(1);
         falsoDoador.setNovoDoador("Verdadeiro");
 
 

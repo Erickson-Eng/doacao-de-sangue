@@ -28,10 +28,10 @@ public class Triagem {
     }
 
     public boolean verificarIdadeMaior60 (Doador d) {
-        if (d.getIdade() > 60 && d.getNovoDoador() == "F"){
-            return true;
-        }else {
+        if (d.getIdade() > 60 && d.getNovoDoador() == "V"){
             return false;
+        }else {
+            return true;
         }
     }
 

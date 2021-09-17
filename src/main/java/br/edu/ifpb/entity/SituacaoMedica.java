@@ -18,7 +18,8 @@ public class SituacaoMedica {
     public SituacaoMedica() {
     }
 
-    public SituacaoMedica(String gravida, String amamentando, String diaDoParto, String febre) {
+    public SituacaoMedica(String gravida, String amamentando,
+                          String diaDoParto, String febre) {
         this.setGravida(gravida);
         this.setAmamentando(amamentando);
         this.setDiaDoParto(diaDoParto);

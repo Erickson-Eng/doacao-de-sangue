@@ -5,13 +5,13 @@ import br.edu.ifpb.entity.enums.GeneroEnum;
 public class Triagem {
 
     public String verificarDoador (Doador d) {
-        if ( verificarIdade(d) == false) {
+        if (!verificarIdade(d)) {
             return  d.getName() + " não está apto para doação! " +
                     "Não tem idade permitida para doação de sangue!";
-        } else if (verificarIdadeMaior60(d) == false) {
+        } else if (!verificarIdadeMaior60(d)) {
             return d.getName() + " não está apto para doação! " +
                     "Pessoas maiores de 60 precisam ter doado uma vez antes dessa idade!";
-        }else if (verificarPeso(d) == false) {
+        }else if (!verificarPeso(d)) {
             return d.getName() + " não está apto para doação! " +
                     "Não tem o peso permitido para doação!";
         }else {
@@ -20,30 +20,17 @@ public class Triagem {
     }
 
     public boolean verificarIdade (Doador d) {
-        if (16 <= d.getIdade() && d.getIdade() <= 69){
-           return true;
-        }else{
-            return false;
-        }
+        return 16 <= d.getIdade() && d.getIdade() <= 69;
     }
 
     public boolean verificarIdadeMaior60 (Doador d) {
-        if (d.getIdade() > 60 && d.getNovoDoador() == "V"){
-            return false;
-        }else {
-            return true;
-        }
+        return d.getIdade() <= 60 || d.getNovoDoador() != "V";
     }
 
     public boolean verificarPeso (Doador d){
         if (d.getGenero() == GeneroEnum.MASCULINO && d.getPeso() >= 60.00){
             return true;
         }
-        else if (d.getGenero() == GeneroEnum.FEMININO && d.getPeso() >= 50.00){
-            return true;
-        }
-        else {
-            return false;
-        }
+        else return d.getGenero() == GeneroEnum.FEMININO && d.getPeso() >= 50.00;
     }
 }

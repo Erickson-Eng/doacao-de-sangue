@@ -24,7 +24,7 @@ public class Triagem {
     }
 
     public boolean verificarIdadeMaior60 (Doador d) {
-        return d.getIdade() <= 60 || d.getNovoDoador() != "V";
+        return d.getIdade() <= 60 || d.getNovoDoador().equals("F");
     }
 
     public boolean verificarPeso (Doador d){

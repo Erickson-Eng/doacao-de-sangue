@@ -26,7 +26,6 @@ public class Main {
         Doador doador2 = new Doador("João", 2, 72.00,"20/01/2010","V",situacaoMedica1);
 
         System.out.println(triagem.verificarDoador(doador2));
-        System.out.println(medica.verificacaoMedica(doador2));
         System.out.println();
 
         SituacaoMedica situacaoMedica2 = new SituacaoMedica("V","F","10/09/2021","F");

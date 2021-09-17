@@ -1,0 +1,8 @@
+br\edu\ifpb\utils\TrataDatas.class
+br\edu\ifpb\entity\Doador.class
+br\edu\ifpb\entity\Main.class
+br\edu\ifpb\utils\ValideInput.class
+br\edu\ifpb\entity\enums\GeneroEnum.class
+br\edu\ifpb\entity\TriagemMedica.class
+br\edu\ifpb\entity\SituacaoMedica.class
+br\edu\ifpb\entity\Triagem.class

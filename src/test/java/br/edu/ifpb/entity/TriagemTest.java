@@ -18,11 +18,11 @@ public class TriagemTest extends TestCase {
         doador.setNovoDoador("V");
 
         Doador doador2 = new Doador();
-        doador.setName("João");
-        doador.setPeso(45.00);
-        doador.setDataDeNascimento("19/05/2010");
-        doador.setGenero(2);
-        doador.setNovoDoador("V");
+        doador2.setName("João");
+        doador2.setPeso(45.00);
+        doador2.setDataDeNascimento("19/05/2010");
+        doador2.setGenero(1);
+        doador2.setNovoDoador("V");
 
         Assert.assertTrue(triagem.verificarIdade(doador));
         Assert.assertFalse(triagem.verificarIdade(doador2));
@@ -40,11 +40,11 @@ public class TriagemTest extends TestCase {
         doador.setNovoDoador("F");
 
         Doador doador2 = new Doador();
-        doador.setName("João");
-        doador.setPeso(72.00);
-        doador.setDataDeNascimento("19/05/1960");
-        doador.setGenero(2);
-        doador.setNovoDoador("V");
+        doador2.setName("João");
+        doador2.setPeso(72.00);
+        doador2.setDataDeNascimento("19/05/1960");
+        doador2.setGenero(2);
+        doador2.setNovoDoador("V");
 
         Assert.assertTrue(triagem.verificarIdadeMaior60(doador));
         Assert.assertFalse(triagem.verificarIdadeMaior60(doador2));

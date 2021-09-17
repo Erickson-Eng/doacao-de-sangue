@@ -2,8 +2,6 @@ package br.edu.ifpb.entity;
 
 import br.edu.ifpb.entity.enums.GeneroEnum;
 
-import java.util.ArrayList;
-
 public class Triagem {
 
     public String verificarDoador (Doador d) {

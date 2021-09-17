@@ -12,7 +12,8 @@ public class SituacaoMedica {
     private String gravida;
     private String amamentando;
     private LocalDate diaDoParto;
-    private Integer periodoPosParto;
+    private Integer anosPosparto;
+    private Integer mesesPosParto;
     private String febre;
 
     public SituacaoMedica() {
@@ -51,21 +52,30 @@ public class SituacaoMedica {
             LocalDate diaDoParto = TrataDatas.stringToLocalDate(obj);
             if (diaDoParto != null){
                 this.setDiaDoParto(diaDoParto);
-                this.setPeriodoPosParto(TrataDatas.localDateToIntegerMeses(diaDoParto));
+                this.setMesesPosParto(TrataDatas.localDateToIntegerMeses(diaDoParto));
+                this.setAnosPosparto(TrataDatas.localDateToIntegerAnos(diaDoParto));
             }
         }catch (DateTimeParseException e){
             this.diaDoParto = null;
-            this.setPeriodoPosParto(null);
+            this.setMesesPosParto(null);
         }
 
     }
 
-    public Integer getPeriodoPosParto() {
-        return periodoPosParto;
+    public Integer getAnosPosparto() {
+        return anosPosparto;
     }
 
-    public void setPeriodoPosParto(Integer periodoPosParto) {
-        this.periodoPosParto = periodoPosParto;
+    public void setAnosPosparto(Integer anosPosparto) {
+        this.anosPosparto = anosPosparto;
+    }
+
+    public Integer getMesesPosParto() {
+        return mesesPosParto;
+    }
+
+    public void setMesesPosParto(Integer mesesPosParto) {
+        this.mesesPosParto = mesesPosParto;
     }
 
     public String getFebre() {

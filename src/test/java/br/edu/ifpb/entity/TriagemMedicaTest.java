@@ -74,7 +74,7 @@ public class TriagemMedicaTest extends TestCase {
         Doador doador1 = new Doador("Isabelle",1, 60.00,"19/01/1996","F",situacaoMedica1);
 
         Assert.assertEquals("V", doador1.getSituacaoMedica().getAmamentando());
-        Assert.assertSame(1,doador1.getSituacaoMedica().getPeriodoPosParto());
+        Assert.assertSame(1,doador1.getSituacaoMedica().getMesesPosParto());
     }
 
     @Test
@@ -89,6 +89,6 @@ public class TriagemMedicaTest extends TestCase {
         SituacaoMedica situacaoMedica1 = new SituacaoMedica("F","V","10/08/2021","F");
         Doador doador1 = new Doador("Isabelle",1, 60.00,"19/01/1996","F",situacaoMedica1);
         // testando data valida e também se periodo está correto
-        Assert.assertSame(1,doador1.getSituacaoMedica().getPeriodoPosParto());
+        Assert.assertSame(1,doador1.getSituacaoMedica().getMesesPosParto());
     }
 }

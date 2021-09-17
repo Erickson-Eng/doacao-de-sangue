@@ -3,11 +3,10 @@ package br.edu.ifpb.utils;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
 public class TrataDatas {
 
-    public static Integer localDateToIntegerIdade(LocalDate dataNascimento){
+    public static Integer localDateToIntegerAnos(LocalDate dataNascimento){
         return Period.between(dataNascimento, LocalDate.now()).getYears();
     }
 

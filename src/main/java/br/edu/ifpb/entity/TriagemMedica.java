@@ -25,6 +25,6 @@ public class TriagemMedica {
     }
 
     public boolean verificarAmamentacao (Doador d){
-        return Objects.equals(d.getSituacaoMedica().getAmamentando(), "V") && d.getSituacaoMedica().getPeriodoPosParto() <= 12;
+        return Objects.equals(d.getSituacaoMedica().getAmamentando(), "V") && (d.getSituacaoMedica().getMesesPosParto() <= 12 && d.getSituacaoMedica().getAnosPosparto() < 1);
     }
 }
